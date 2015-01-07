@@ -5,7 +5,8 @@ class Book
     attr_reader :isbn10, :isbn13, :page_count, :language
 
     def initialize(isbn)
-        # TODO check isbn is isbn10 or isbn13
         # TODO get book info by Google Book API with isbn
+
+        response = RestClient.get "https://www.googleapis.com/books/v1/volumes?q=isbn:#{isbn}"
     end
 end
