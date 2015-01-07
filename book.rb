@@ -1,4 +1,5 @@
 require 'rest-client'
+require 'json'
 
 class Book
     attr_reader :title, :subtitle, :authors, :publisher, :published_date, :description
@@ -8,5 +9,7 @@ class Book
         # TODO get book info by Google Book API with isbn
 
         response = RestClient.get "https://www.googleapis.com/books/v1/volumes?q=isbn:#{isbn}"
+
+        data = JSON.parse(response)
     end
 end
