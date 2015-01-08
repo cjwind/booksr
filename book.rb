@@ -3,7 +3,7 @@ require 'json'
 
 class Book
     attr_reader :title, :subtitle, :authors, :publisher, :published_date, :description
-    attr_reader :isbn10, :isbn13, :page_count, :language
+    attr_reader :isbn10, :isbn13, :page_count, :lang
 
     def initialize(isbn)
         response = RestClient.get "https://www.googleapis.com/books/v1/volumes?q=isbn:#{isbn}"
@@ -15,9 +15,10 @@ class Book
         @subtitle = bookInfo["subtitle"]
         @authors = bookInfo["authors"]
         @published_date = bookInfo["publishedDate"]
+        @publisher = bookInfo["publisher"]
         @description = bookInfo["description"]
         @page_count = bookInfo["pageCount"]
-        @language = bookInfo["language"]
+        @lang = bookInfo["language"]
 
         isbns = bookInfo["industryIdentifiers"]
         isbns.each do |isbn|
