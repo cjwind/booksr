@@ -11,5 +11,13 @@ class Book
         response = RestClient.get "https://www.googleapis.com/books/v1/volumes?q=isbn:#{isbn}"
 
         data = JSON.parse(response)
+        bookInfo = data["items"][0]["volumeInfo"]
+
+        @title = bookInfo["title"]
+        @subtitle = bookInfo["subtitle"]
+        @authors = bookInfo["authors"]
+        @published_date = bookInfo["publishedDate"]
+        @description = bookInfo["description"]
+        @isbn10 = bookInfo["industryIdentifiers"]
     end
 end
