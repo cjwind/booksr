@@ -6,8 +6,6 @@ class Book
     attr_reader :isbn10, :isbn13, :page_count, :language
 
     def initialize(isbn)
-        # TODO get book info by Google Book API with isbn
-
         response = RestClient.get "https://www.googleapis.com/books/v1/volumes?q=isbn:#{isbn}"
 
         data = JSON.parse(response)
@@ -18,6 +16,16 @@ class Book
         @authors = bookInfo["authors"]
         @published_date = bookInfo["publishedDate"]
         @description = bookInfo["description"]
-        @isbn10 = bookInfo["industryIdentifiers"]
+        @page_count = bookInfo["pageCount"]
+        @language = bookInfo["language"]
+
+        isbns = bookInfo["industryIdentifiers"]
+        isbns.each do |isbn|
+            if isbn["type"] == "ISBN_13"
+                @isbn13 = isbn["identifier"]
+            elsif isbn["type"] == "ISBN_10"
+                @isbn10 = isbn["identifier"]
+            end
+        end
     end
 end
