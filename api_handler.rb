@@ -57,11 +57,11 @@ class ApiHandler
         return info
 	end
 
-	def searchByIsbnDb(query_string, query_type)
+	def search_by_isbndb(query_string, query_type)
 
 	end
 
-	def searchByAmazon(query_string, query_type)
+	def search_by_amazon(query_string, query_type)
 
 	end
 end
