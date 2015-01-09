@@ -13,28 +13,21 @@ class ApiHandler
 		elsif query_type == :author
 			author = URI::escape(query_string)
 			query = "?q=inauthor:#{author}"
-			response = RestClient.get api_uri + query
-
-			data = JSON.parse(response)
-			volumes = data["items"]
-
-			books = Array.new
-			volumes.each do |volume|
-				volume_info = volume["volumeInfo"]
-		        books.push(Book.new(parse_info_from_google(volume_info)))
-			end
 		elsif query_type == :isbn
 			isbn = query_string
 			query = "?q=isbn:#{isbn}"
-			response = RestClient.get api_uri + query
-
-			data = JSON.parse(response)
-			volume_info = data["items"][0]["volumeInfo"]
-			
-			books = Array.new
-	        books.push(Book.new(parse_info_from_google(volume_info)))
 		elsif query_type == :keyword
 
+		end
+
+		response = RestClient.get api_uri + query
+		data = JSON.parse(response)
+		volumes = data["items"]
+
+		books = Array.new
+		volumes.each do |volume|
+			volume_info = volume["volumeInfo"]
+	        books.push(Book.new(parse_info_from_google(volume_info)))
 		end
 
 		return books
