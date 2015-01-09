@@ -1,10 +1,10 @@
 #encoding: utf-8
 
-require "test/unit"
-require "./booksr"
-require "./book"
+require 'test/unit'
+require './booksr'
+require './book'
 
-class TestBooksr < Test::Unit::TestCase
+class TestSearchIsbnByGoogleApi < Test::Unit::TestCase
 	def setup	# will be called before run each member function
 		@books = Booksr.search("9789866841590", :isbn, [:google])
 		@book = @books[0]
