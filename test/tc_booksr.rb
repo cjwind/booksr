@@ -1,11 +1,17 @@
 #encoding: utf-8
 
 require "test/unit"
+require "./booksr"
 require "./book"
 
-class TestBook < Test::Unit::TestCase
+class TestBooksr < Test::Unit::TestCase
 	def setup	# will be called before run each member function
-		@book = Book.new("9789866841590")
+		@books = Booksr.search("9789866841590", :isbn, [:google])
+		@book = @books[0]
+	end
+
+	def test_result_count
+		assert_equal(1, @books.size)
 	end
 
 	def test_title
