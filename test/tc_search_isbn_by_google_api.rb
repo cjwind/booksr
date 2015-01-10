@@ -7,14 +7,13 @@ require './book'
 class TestSearchIsbnByGoogleApi < Test::Unit::TestCase
 	def setup	# will be called before run each member function
 		@books = Booksr.search("9789866841590", :isbn, [:google])
-		@book = @books[0]
 	end
 
-	def test_result_count
+	def test_results
 		assert_equal(1, @books.size)
-	end
 
-	def test_attrs
+		@book = @books[0]
+
 		assert_equal("你的孩子不是你的孩子", @book.title)
 		assert_equal("被考試綁架的家庭故事──一位家教老師的見證", @book.subtitle)
 	

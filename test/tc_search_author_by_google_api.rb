@@ -9,11 +9,9 @@ class TestSearchAuthorByGoogleApi1 < Test::Unit::TestCase
 		@books = Booksr.search("娥蘇拉勒瑰恩", :author, [:google])
 	end
 
-	def test_result_count
-		assert_equal(5, @books.size)
-	end
-
 	def test_results
+		assert_equal(5, @books.size)
+
 		assert_equal("地海傳說: 地海奇風", @books[0].title)
 		assert_equal("地海傳說: 地海孤雛", @books[1].title)
 		assert_equal("地海傳說: 地海巫師", @books[2].title)
