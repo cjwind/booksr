@@ -7,12 +7,14 @@ class Booksr
 		parser = Parser.new
 		books = Array.new
 
-		json = api.search_by_google(query_string, query_type)
-		volumes = parser.parse_json(json)
-		
-		volumes.each do |volume|
-			volume_info = volume["volumeInfo"]
-	        books.push(Book.new(parser.parse_info_from_google(volume_info)))
+		responses = api.search_by_google(query_string, query_type)
+		responses.each do |response|
+			volumes = parser.parse_json(response)
+			
+			volumes.each do |volume|
+				volume_info = volume["volumeInfo"]
+		        books.push(Book.new(parser.parse_info_from_google(volume_info)))
+			end
 		end
 
 		return books

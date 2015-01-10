@@ -27,7 +27,7 @@ class TestSearchAuthorByGoogleApi2 < Test::Unit::TestCase
 		@books = Booksr.search("侯文詠", :author, [:google])
 	end
 
-	def test_result_count
-		assert_equal(59, @books.size)
+	def test_result_count_when_over_40
+		assert_equal(42, @books.size)
 	end
 end
