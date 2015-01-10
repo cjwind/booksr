@@ -20,11 +20,13 @@ class Parser
         info[:lang] = volume_info["language"]
 
         isbns = volume_info["industryIdentifiers"]
-        isbns.each do |isbn|
-            if isbn["type"] == "ISBN_13"
-                info[:isbn13] = isbn["identifier"]
-            elsif isbn["type"] == "ISBN_10"
-                info[:isbn10] = isbn["identifier"]
+        if !isbns.nil?
+            isbns.each do |isbn|
+                if isbn["type"] == "ISBN_13"
+                    info[:isbn13] = isbn["identifier"]
+                elsif isbn["type"] == "ISBN_10"
+                    info[:isbn10] = isbn["identifier"]
+                end
             end
         end
 
