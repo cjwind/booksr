@@ -44,7 +44,18 @@ class ApiHandler
 			response = RestClient.get api_uri + query
 			responses.push(response)
 		elsif query_type == :keyword
+			keyword = URI::escape(query_string)
+			start_index = 0
 
+			begin
+				query = "?q=#{keyword}&startIndex=#{start_index}&maxResults=#{GOOGLE_MAX_RESULTS}"
+				
+				response = RestClient.get api_uri + query
+				responses.push(response)
+				
+				data = parser.parse_json(response)
+				start_index += GOOGLE_MAX_RESULTS
+			end while data.size == GOOGLE_MAX_RESULTS
 		end
 
 		return responses
