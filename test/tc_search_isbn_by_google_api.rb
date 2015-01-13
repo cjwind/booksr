@@ -1,8 +1,7 @@
 #encoding: utf-8
 
 require 'test/unit'
-require './booksr'
-require './book'
+require 'booksr'
 
 class TestSearchIsbnByGoogleApi < Test::Unit::TestCase
 	def setup	# will be called before run each member function
