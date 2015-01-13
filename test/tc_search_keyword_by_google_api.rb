@@ -9,6 +9,6 @@ class TestSearchKeywordByGoogleApi1 < Test::Unit::TestCase
 	end
 
 	def test_result_count
-		assert_operator(500, :<=, @books.size)
+		assert_operator(40, :<=, @books.size)
 	end
 end

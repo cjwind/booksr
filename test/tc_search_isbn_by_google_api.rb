@@ -8,7 +8,7 @@ class TestSearchIsbnByGoogleApi < Test::Unit::TestCase
 		@books = Booksr.search("9789866841590", :isbn)
 	end
 
-	def test_results
+	def test_result
 		assert_equal(1, @books.size)
 
 		@book = @books[0]
