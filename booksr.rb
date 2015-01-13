@@ -2,7 +2,7 @@ require './api_handler'
 require './parser'
 
 class Booksr
-	def self.search(query_string, query_type, query_sources)
+	def self.search(query_string, query_type)
 		api = ApiHandler.new
 		parser = Parser.new
 		books = Array.new

@@ -6,7 +6,7 @@ require './book'
 
 class TestSearchTitleByGoogleApi1 < Test::Unit::TestCase
 	def setup	# will be called before run each member function
-		@books = Booksr.search("時間簡史", :title, [:google])
+		@books = Booksr.search("時間簡史", :title)
 	end
 
 	def test_result_count

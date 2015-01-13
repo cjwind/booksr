@@ -6,7 +6,7 @@ require './book'
 
 class TestSearchIsbnByGoogleApi < Test::Unit::TestCase
 	def setup	# will be called before run each member function
-		@books = Booksr.search("9789866841590", :isbn, [:google])
+		@books = Booksr.search("9789866841590", :isbn)
 	end
 
 	def test_results
