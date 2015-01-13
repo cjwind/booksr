@@ -38,12 +38,4 @@ class ApiHandler
 
 		return responses
 	end
-
-	def search_by_isbndb(query_string, query_type)
-
-	end
-
-	def search_by_amazon(query_string, query_type)
-
-	end
 end

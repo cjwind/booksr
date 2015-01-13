@@ -6,7 +6,7 @@ require './book'
 
 class TestSearchAuthorByGoogleApi1 < Test::Unit::TestCase
 	def setup	# will be called before run each member function
-		@books = Booksr.search("娥蘇拉勒瑰恩", :author, [:google])
+		@books = Booksr.search("娥蘇拉勒瑰恩", :author)
 	end
 
 	def test_results
@@ -22,10 +22,10 @@ end
 
 class TestSearchAuthorByGoogleApi2 < Test::Unit::TestCase
 	def setup
-		@books = Booksr.search("侯文詠", :author, [:google])
+		@books = Booksr.search("侯文詠", :author)
 	end
 
 	def test_result_count_when_over_40
-		assert_equal(42, @books.size)
+		assert_equal(41, @books.size)
 	end
 end
