@@ -1,5 +1,9 @@
-require './api_handler'
-require './parser'
+require 'json'
+require 'rest-client'
+
+require 'booksr/api_handler'
+require 'booksr/parser'
+require 'booksr/book'
 
 class Booksr
 	def self.search(query_string, query_type)

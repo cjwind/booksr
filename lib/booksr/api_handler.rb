@@ -1,8 +1,5 @@
 #encoding: utf-8
 
-require 'rest-client'
-require './parser'
-
 class ApiHandler
 	GOOGLE_MAX_RESULTS = 40	# const
 

@@ -1,5 +1,3 @@
-require 'json'
-
 class Parser
 	def parse_json(json)
 		data = JSON.parse(json)

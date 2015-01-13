@@ -4,7 +4,7 @@ Gem::Specification.new do |s|
     s.date = '2015-01-13'
     s.summary = 'A simple book search'  # TODO
     s.description = ''  # TODO
-    s.authors = ['']
+    s.authors = ['cjwind']
     s.email = 'cwentsai@gmail.com'
     s.files = Dir['lib/*.rb']
     s.homepage = '' # TODO
