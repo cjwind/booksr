@@ -10,7 +10,7 @@ A simple book searcher in Ruby.
 
 ## Usage ##
 
-books = Booksr.search(query_string, query_type)
+`books = Booksr.search(query_string, query_type)`
 
 `query_type` can be:
 
@@ -19,14 +19,35 @@ books = Booksr.search(query_string, query_type)
 * `:isbn`
 * `:keyword`
 
-default is :keyword
+default is `:keyword`.
 
-query_string of isbn can be ISBN10 or ISBN13.
+`query_string` of `:isbn` can be ISBN10 or ISBN13.
 
-books is array of `Book` which can retrieve book information.
+Return value is array of `Book` which can retrieve book information.
+
+Attributes of class `Book`:
+
+* title
+* subtitle
+* authors: array
+* publisher
+* published_date
+* description
+* isbn10
+* isbn13
+* page_count
+* lang
 
 
 ## Example ##
 
-books = Booksr.search('Ruby on Rails', :title)
+```ruby
+require 'booksr'
 
+books = Booksr.search('Ruby on Rails', :title)
+book = books[0]
+
+puts book.title
+puts book.authors    # authors is a array
+puts book.subtitle
+```
