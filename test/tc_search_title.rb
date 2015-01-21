@@ -9,7 +9,7 @@ class TestSearchTitleByGoogleApi < Test::Unit::TestCase
 		@books = Booksr.search(@title, :title)
 	end
 
-	def test_results
+	def test_result_count_over_40
 		assert_operator(40, :<=, @books.size)
 	end
 end
