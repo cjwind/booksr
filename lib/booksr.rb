@@ -6,7 +6,12 @@ require 'booksr/parser'
 require 'booksr/book'
 
 class Booksr
-	def self.search(query_string, query_type)
+	def self.search(query_string, query_type = :keyword)
+		accepted_type = [:title, :author, :isbn, :keyword]
+		if !accepted_type.include?(query_type)
+			return nil
+		end
+
 		api = ApiHandler.new
 		parser = Parser.new
 		books = Array.new
