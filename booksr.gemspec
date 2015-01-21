@@ -11,6 +11,7 @@ Gem::Specification.new do |s|
     s.license = 'MIT'
 
     s.add_runtime_dependency 'rest-client'
+    s.add_runtime_dependency 'json'
 
     s.add_development_dependency 'test-unit', '~> 3.0.9'
 end
