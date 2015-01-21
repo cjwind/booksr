@@ -10,7 +10,8 @@ Gem::Specification.new do |s|
     s.homepage = 'https://github.com/cjwind/booksr'
     s.license = 'MIT'
 
+    s.add_runtime_dependency 'bundler'
     s.add_runtime_dependency 'rest-client'
 
-    s.add_development_dependency 'test-unit', '~> 3.0.9'
+    s.add_development_dependency 'test-unit'
 end
