@@ -1,6 +1,6 @@
 Gem::Specification.new do |s|
     s.name = 'booksr'
-    s.version = '0.1.1'
+    s.version = '0.1.2'
     s.date = '2015-01-25'
     s.summary = 'A simple book searcher'
     s.description = 'Search book with title, author, isbn or keyword by Google Book API.'
