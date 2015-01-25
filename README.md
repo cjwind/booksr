@@ -1,5 +1,7 @@
 # Booksr #
 
+[![Build Status](https://travis-ci.org/cjwind/booksr.svg?branch=master)](https://travis-ci.org/cjwind/booksr)
+
 A simple book searcher in Ruby.
 
 
