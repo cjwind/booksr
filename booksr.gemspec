@@ -6,7 +6,7 @@ Gem::Specification.new do |s|
     s.description = 'Search book with title, author, isbn or keyword by Google Book API.'
     s.authors = ['cjwind']
     s.email = 'cwentsai@gmail.com'
-    s.files = Dir['lib/*.rb', 'lib/booksr/*.rb']
+    s.files = Dir['lib/*.rb', 'lib/booksr/*.rb', 'Gemfile', 'README.md', 'Rakefile', '*.gemspec', 'test/*.rb']
     s.homepage = 'https://github.com/cjwind/booksr'
     s.license = 'MIT'
 
